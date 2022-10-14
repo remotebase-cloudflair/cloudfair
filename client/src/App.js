@@ -1,15 +1,24 @@
+import { AuthProvider } from './context/AuthContext'
+import { Routes, Route } from "react-router-dom";
+
+// pages
+import HomePage from './pages/HomePage'
+import LoginPage from './pages/LoginPage'
+import Dashboard from './pages/Dashboard'
+// components
+import Footer from './components/Footer'
 
 const App = () => {
 
   return (
-    <div className="w-full h-[100vh] flex justify-center items-center bg-slate-300">
-      <h1 className="text-center font-semibold">
-        Hello World!
-      </h1>
-      <div className="w-full fixed bg-slate-500 bottom-0 left-0 text-center text-white text-xs p-2">
-        Made by Cloudfair
-      </div>
-    </div>
+    <AuthProvider>
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/login' element={<LoginPage />} />
+        <Route path='/home' element={<Dashboard />} />
+      </Routes>
+      <Footer />
+    </AuthProvider>
   );
 }
 
