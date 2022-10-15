@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react'
 
 export default function Modal() {
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
   const modalContentRef = useRef();
 
   return (
