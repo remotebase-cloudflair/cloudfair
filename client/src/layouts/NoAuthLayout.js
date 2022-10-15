@@ -8,7 +8,7 @@ function NoAuthLayout() {
       <div className="md:basis-1/2 bg-primary flex justify-center items-center p-4 md:p-16 lg:p-36">
         <Logo className='w-64 md:w-auto' />
       </div>
-      <div className="basis-1/2 flex flex-col justify-center items-center py-16 px-8 md:px-16 lg:px-24 max-w-2xl mx-auto">
+      <div className="basis-1/2 h-full flex flex-col justify-center items-center py-16 md:py-0 px-8 md:px-16 max-w-2xl mx-auto overflow-y-auto">
         <Outlet />
       </div>
       <Modal />

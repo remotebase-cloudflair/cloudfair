@@ -3,7 +3,7 @@ import React from 'react'
 function Logo(props) {
   return (
     <img
-      src='name-logo.png'
+      src={window.location.origin  + '/name-logo.png'}
       {...props}
     />
   )
