@@ -1,8 +1,12 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
-export default function Modal() {
+export default function Modal({ isOpen, children }) {
   const [showModal, setShowModal] = useState(false);
   const modalContentRef = useRef();
+
+  useEffect(() => {
+    setShowModal(isOpen)
+  }, [isOpen])
 
   return (
     <>
@@ -22,7 +26,7 @@ export default function Modal() {
           >
             <div className="relative w-auto my-6 mx-auto max-w-3xl" ref={modalContentRef}>
               <div className="border-0 shadow-lg flex flex-col w-full bg-white p-4">
-                {/* content */}
+                {children}
               </div>
             </div>
           </div>
