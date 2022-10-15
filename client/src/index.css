@@ -1,7 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap');
+
+@layer components {
+    .create-account-link {
+        @apply w-24 text-center py-1 border border-dark-500 hover:bg-dark-500 hover:text-white;
+    }
+}
 
 body, #root {
     min-height: 100vh;
+    font-family: 'Inter', sans-serif;
 }
