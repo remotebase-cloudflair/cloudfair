@@ -9,7 +9,7 @@ function LoginPage() {
       <h1 className='text-4xl'>Sign In</h1>
       {/* google sign in */}
       <button
-        class="flex w-full justify-center rounded-md border border-lightGray bg-white p-1 text-black sm:p-2"
+        className="flex w-full justify-center rounded-md border border-lightGray bg-white p-1 text-black sm:p-2"
         onClick={() => {}}
       >
         <img

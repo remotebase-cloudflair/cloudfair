@@ -8,7 +8,7 @@ function InputField({ label, type, ...rest}) {
   return (
     <div className='w-full flex flex-col'>
       <label
-        for={rest.name}
+        htmlFor={rest.name}
         className='w-full'
       >
         {label}
