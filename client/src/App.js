@@ -11,6 +11,7 @@ import OnBoarding from './pages/OnBoarding';
 import WelcomePage from './pages/CreateAccount/WelcomePage';
 import BaseCreateAccount from './pages/CreateAccount/BaseCreateAccount';
 import CreateAccount from './pages/CreateAccount/CreateAccount';
+import ForgotPassword from './pages/ForgotPassword';
 
 const App = () => {
 
@@ -28,7 +29,7 @@ const App = () => {
               <Route path='volunteer' element={<CreateAccount />} />
             </Route>
             <Route path='/login' element={<LoginPage />} />
-            <Route path='/forgot-password' element={<></>} />
+            <Route path='/forgot-password' element={<ForgotPassword />} />
           </Route>
         :
           <>
