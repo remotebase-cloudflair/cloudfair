@@ -7,7 +7,7 @@ function LoginPage() {
       Sign In
       <p className='text-center text-dark-500'>
         Don't have an account?&nbsp;
-        <Link to='/create-account' className='font-semibold'>Sign Up</Link>
+        <Link to='/create-account' className=''>Sign Up</Link>
       </p>
     </div>
   )

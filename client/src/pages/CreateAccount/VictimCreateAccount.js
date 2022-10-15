@@ -2,7 +2,9 @@ import React from 'react'
 
 function VictimCreateAccount() {
   return (
-    <div>VictimCreateAccount</div>
+    <div>
+      <h1></h1>
+    </div>
   )
 }
 
