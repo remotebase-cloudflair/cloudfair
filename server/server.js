@@ -1,10 +1,16 @@
 import express from "express";
 import { config } from "dotenv";
+import cors from "cors";
+import cookieParser from "cookie-parser";
 
 const app = express();
 config();
 
 const PORT = process.env.PORT || 8080;
+
+app.use(cors());
+app.use(express.json());
+app.use(cookieParser())
 
 //Prefix all routes with api
 app.get("/api", (req,res) => {
