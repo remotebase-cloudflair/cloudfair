@@ -12,6 +12,7 @@ import { useContext } from 'react';
 import NoAuthLayout from './layouts/NoAuthLayout';
 import OnBoarding from './pages/OnBoarding';
 
+
 const App = () => {
 
   const user = useContext(AuthContext)

@@ -1,0 +1,27 @@
+{
+  "development": {
+    "username": "root",
+    "password": null,
+    "database": "database_development",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "googleClientId": "948203392146-vtgojd2kn1md75a6aemkkerp132vjk7h.apps.googleusercontent.com",
+  "googleClientSecretId": "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",
+  "googleRedirectURL": "http://localhost:1337/api/session/oauth/google"
+
+}

@@ -2,6 +2,7 @@ import express from "express";
 import { config } from "dotenv";
 import cors from "cors";
 import cookieParser from "cookie-parser";
+// import {getGoogleURL} from "./util/getGoogleURL"
 
 const app = express();
 config();
@@ -16,6 +17,9 @@ app.use(cookieParser())
 app.get("/api", (req,res) => {
     res.send("Hello World! from Api");
 })
+
+//Google Outh2 sessions
+// app.get("/api/session", getGoogleURL)
 
 
 app.listen(PORT, ()=> {
