@@ -1,11 +1,16 @@
-import { useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useContext, useRef, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import InputField from '../../components/InputField'
 import Modal from '../../components/Modal'
+import { AuthContext } from '../../context/AuthContext'
 
 function CreateAccount() {
   const [ showModal, setShowModal ] = useState(false)
   const [ checkboxChecked, setCheckboxChecked ] = useState(false)
+
+  const { setUser } = useContext(AuthContext)
+
+  const navigate = useNavigate()
 
   const formRef = useRef()
 
@@ -32,6 +37,8 @@ function CreateAccount() {
           className='space-y-4'
           onSubmit={(e) => {
             e.preventDefault()
+            setUser(true)
+            navigate('/welcome')
           }}
           ref={formRef}
         >

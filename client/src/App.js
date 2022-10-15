@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { AuthContext, AuthProvider } from './context/AuthContext'
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 // pages
 import HomePage from './pages/HomePage'
@@ -13,6 +13,9 @@ import BaseCreateAccount from './pages/CreateAccount/BaseCreateAccount';
 import CreateAccount from './pages/CreateAccount/CreateAccount';
 import ForgotPassword from './pages/ForgotPassword';
 
+// utils
+import ProtectedRoute from './ProtectedRoute'
+
 
 const App = () => {
 
@@ -22,7 +25,6 @@ const App = () => {
     <AuthProvider>
       <Routes>
         <Route path='/' element={<HomePage />} />
-        { (!user) ?
           <Route element={<NoAuthLayout />}>
             <Route path='/create-account' element={<BaseCreateAccount />}>
               <Route index element={<WelcomePage />} />
@@ -32,12 +34,13 @@ const App = () => {
             <Route path='/login' element={<LoginPage />} />
             <Route path='/forgot-password' element={<ForgotPassword />} />
           </Route>
-        :
-          <>
-            <Route path='/welcome' element={<OnBoarding />} />
-            <Route path='/home' element={<Dashboard />} />
-          </>
-        }
+          <Route path='/welcome' element={<ProtectedRoute />}>
+            <Route index element={<OnBoarding />} />
+          </Route>
+          <Route path='/dashboard' element={<ProtectedRoute />}>
+            <Route index element={<Dashboard />} />
+          </Route>
+        <Route path='/*' element={<Navigate to='/' replace={true} />} />
       </Routes>
     </AuthProvider>
   );
