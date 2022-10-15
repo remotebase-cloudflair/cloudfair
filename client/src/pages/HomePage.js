@@ -1,8 +1,14 @@
 import React from 'react'
+import  getGoogleURL  from '../utils/getGoogleURL'
 
 function HomePage() {
+
   return (
-    <div>HomePage</div>
+    <div>
+    <a href={getGoogleURL()}>Please Login</a>
+      HomePage
+      </div>
+    
   )
 }
 
