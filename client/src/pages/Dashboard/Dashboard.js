@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faBell, faMessage, faCircleUser, faGear, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 
 import Logo from '../../components/Logo'
+import Notifications from './Notifications';
 
 function Dashboard() {
 
@@ -16,9 +17,11 @@ function Dashboard() {
   return (
     <div className='flex flex-row h-[100vh]'>
       {/* sidebar */}
-      <div className='py-4 w-14 hover:w-64 ml-4 transition-all overflow-x-hidden bg-white flex flex-col justify-between'>
+      <div className='py-4 w-14 group hover:w-64 ml-4 hover:mr-4 transition-all overflow-x-hidden bg-white flex flex-col justify-between'>
         <nav>
-          {/* <Logo className='w-56 none group-hover:block' /> */}
+          <div className='w-56 h-16 pl-56 group-hover:pl-0'>
+            <Logo className='w-full h-full' />
+          </div>
           <ul className='space-y-8'>
             <li>
               <NavLink
@@ -82,7 +85,7 @@ function Dashboard() {
           <Routes>
             <Route index element={<Navigate to='/dashboard/home' />} />
             <Route index path='/home' element={<>Home</>} />
-            <Route path='/notifications' element={<>Notifications</>} />
+            <Route path='/notifications' element={<Notifications />} />
             <Route path='/chat' element={<>Chat</>} />
             <Route path='/profile' element={<>Profile</>} />
             <Route path='/settings' element={<>Settings</>} />
