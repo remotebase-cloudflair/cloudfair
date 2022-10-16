@@ -14,6 +14,12 @@ function CreateAccount() {
 
   const formRef = useRef()
 
+  const userType = () => {
+    const breakenDown = window.location.pathname.split('/')
+    const type = breakenDown[breakenDown.length-1]
+    return type
+  }
+
   return (
     <>
       <div className='flex flex-col space-y-4 w-full'>
@@ -37,7 +43,11 @@ function CreateAccount() {
           className='space-y-4'
           onSubmit={(e) => {
             e.preventDefault()
-            setUser(true)
+            setUser({
+              name: 'Abdul Rehman',
+              profileUrl: '',
+              type: userType(),
+            })
             navigate('/welcome')
           }}
           ref={formRef}

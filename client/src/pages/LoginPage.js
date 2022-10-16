@@ -1,8 +1,14 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import { useContext } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import InputField from '../components/InputField'
+import { AuthContext } from '../context/AuthContext'
 
 function LoginPage() {
+
+  const { setUser } = useContext(AuthContext)
+
+  const navigate = useNavigate()
+
   return (
     <div className='flex flex-col space-y-4 w-full'>
       {/* header */}
@@ -25,6 +31,12 @@ function LoginPage() {
         className='space-y-4'
         onSubmit={(e) => {
           e.preventDefault()
+          setUser({
+            name: 'Abdul Rehman',
+            profileUrl: '',
+            type: 'victim',
+          })
+          navigate('/dashboard')
         }}
       >
         <InputField
