@@ -6,6 +6,8 @@ const db = require("./models");
 const session = require('express-session');
 const passport = require('passport');
 const OAuth2Strategy = require('passport-google-oauth');
+const volunteerRoutes = require("./routes/volunteer");
+const victimRoutes = require("./routes/victim");
 
 const GoogleStrategy = OAuth2Strategy.OAuth2Strategy;
 
@@ -64,6 +66,9 @@ db.sequelize.sync()
 app.get("/api", (req,res) => {
     res.send("Hello World! from Api");
 })
+app.use("/api/volunteer", volunteerRoutes);
+app.use("/api/victim", victimRoutes);
+
 app.get('/success', (req, res) => res.send(userProfile));
 app.get('/error', (req, res) => res.send("error logging in"));
 
