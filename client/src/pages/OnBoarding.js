@@ -1,4 +1,5 @@
 import { useCallback } from 'react'
+import { useNavigate } from 'react-router-dom'
 import DropZone from '../components/DropZone'
 import InputField from '../components/InputField'
 
@@ -6,6 +7,8 @@ function OnBoarding() {
   const onDrop = useCallback(acceptedFiles => {
     console.log(acceptedFiles);
   }, [])
+
+  const navigate = useNavigate()
 
   const genderOptions = [
     {value: 'male', label: 'Male'},
@@ -27,6 +30,7 @@ function OnBoarding() {
       <form
         onSubmit={e => {
           e.preventDefault()
+          navigate('/dashboard')
         }}
         className='max-w-5xl 2xl:max-w-7xl mx-auto pt-8 space-y-8'
       >
