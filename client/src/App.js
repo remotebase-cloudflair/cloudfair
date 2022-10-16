@@ -5,7 +5,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 // pages
 import HomePage from './pages/HomePage'
 import LoginPage from './pages/LoginPage'
-import Dashboard from './pages/Dashboard'
+import Dashboard from './pages/Dashboard/Dashboard'
 import NoAuthLayout from './layouts/NoAuthLayout';
 import OnBoarding from './pages/OnBoarding';
 import WelcomePage from './pages/CreateAccount/WelcomePage';
@@ -38,7 +38,7 @@ const App = () => {
             <Route index element={<OnBoarding />} />
           </Route>
           <Route path='/dashboard' element={<ProtectedRoute />}>
-            <Route index element={<Dashboard />} />
+            <Route index path='*' element={<Dashboard />} />
           </Route>
         <Route path='/*' element={<Navigate to='/' replace={true} />} />
       </Routes>
