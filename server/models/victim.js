@@ -2,7 +2,7 @@
 const {
   Model
 } = require('sequelize');
-module.exports = (sequelize, DataTypes) => {
+module.exports = (sequelize, Sequelize) => {
   class Victim extends Model {
     /**
      * Helper method for defining associations.
@@ -14,12 +14,52 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Victim.init({
-    firstName: DataTypes.STRING,
-    lastName: DataTypes.STRING,
-    email: DataTypes.STRING,
+    id: {
+      type: Sequelize.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    public_id : {
+      type: Sequelize.STRING,
+      unique: true,
+      allowNull: false,
+      comment: 'UUID primarily used for client server identity communication',
+    },
+    firstName: {
+      type: Sequelize.STRING
+    },
+    lastName: {
+      type: Sequelize.STRING
+    },
+    phone: {
+      type: Sequelize.STRING
+    },
+    email: {
+      type: Sequelize.STRING,
+      unique: true,
+    },
+    country: {
+      type: Sequelize.STRING
+    },
+    status: {
+      allowNull: false,
+      type: Sequelize.STRING,
+    },
+    address: {
+      allowNull: false,
+      type: Sequelize.STRING,
+    },
+    createdAt: {
+      allowNull: false,
+      type: Sequelize.DATE
+    },
+    updatedAt: {
+      allowNull: false,
+      type: Sequelize.DATE
+    }
   }, {
     sequelize,
-    modelName: 'victim',
+    modelName: 'victims',
   });
   return Victim;
 };
