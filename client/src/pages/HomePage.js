@@ -1,11 +1,10 @@
 import React from 'react'
-import  getGoogleURL  from '../utils/getGoogleURL'
 
 function HomePage() {
 
   return (
     <div>
-    <a href={getGoogleURL()}>Please Login</a>
+    <a href='8080/auth/google'>Please Login</a>
       HomePage
       </div>
     
