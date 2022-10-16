@@ -14,9 +14,18 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Volunteer.init({
-    firstName: {
+      id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
+      firstName: {
         type: DataTypes.STRING,
         allowNull: false,
+      },
+      public_id: {
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4,
       },
       lastName: {
         type: DataTypes.STRING,
@@ -33,6 +42,17 @@ module.exports = (sequelize, DataTypes) => {
       company: {
         type: DataTypes.STRING,
       },
+      status: {
+        allowNull: false,
+        type: DataTypes.STRING,
+      },
+      address: {
+        allowNull: false,
+        type: DataTypes.STRING,
+      },
+      social: {
+        type: DataTypes.STRING,
+      },
       created_at: {
         type: DataTypes.DATE
       },
@@ -41,7 +61,7 @@ module.exports = (sequelize, DataTypes) => {
       }
   }, {
     sequelize,
-    modelName: 'volunteer',
+    modelName: 'volunteers',
   });
   return Volunteer;
 };
